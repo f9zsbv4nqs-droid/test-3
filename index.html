@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Wiener Kaffeehaus</title>
+<title>Alt Wien Kaffeehaus</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* =====================
-RESET
-===================== */
+/* ================= BASE ================= */
 *{
 margin:0;
 padding:0;
@@ -23,157 +21,119 @@ scroll-behavior:smooth;
 body{
 font-family:Inter, sans-serif;
 background:#0e0e0e;
-color:#fff;
-overflow-x:hidden;
+color:white;
 }
 
-/* =====================
-NAV
-===================== */
+/* ================= NAV ================= */
 nav{
 position:fixed;
 top:0;
-left:0;
 width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 8%;
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(12px);
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(10px);
 z-index:1000;
-}
-
-.logo{
-font-family:"Cormorant Garamond";
-font-size:28px;
-font-weight:700;
-letter-spacing:1px;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-font-size:14px;
+margin-left:20px;
 opacity:.8;
-transition:.3s;
+font-size:14px;
 }
 
-nav a:hover{
-opacity:1;
-}
+nav a:hover{opacity:1}
 
-/* MOBILE MENU */
-.menu-btn{
-display:none;
+.logo{
+font-family:"Cormorant Garamond";
 font-size:26px;
-cursor:pointer;
+font-weight:700;
 }
 
-/* =====================
-HERO
-===================== */
+/* MOBILE */
+.menu{
+display:none;
+cursor:pointer;
+font-size:26px;
+}
+
+/* ================= HERO ================= */
 .hero{
 height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),
-url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5");
-background-size:cover;
-background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5") center/cover;
 }
 
 .hero h1{
-font-family:"Cormorant Garamond";
 font-size:5rem;
-margin-bottom:20px;
+font-family:"Cormorant Garamond";
 }
 
 .hero p{
-max-width:700px;
-margin:auto;
-font-size:1.2rem;
-opacity:.9;
+margin-top:10px;
+opacity:.8;
 }
 
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:15px 35px;
+margin-top:25px;
+padding:14px 30px;
 background:#c49b63;
-color:#000;
-font-weight:600;
+color:black;
 text-decoration:none;
-border-radius:10px;
-transition:.3s;
+border-radius:8px;
+font-weight:600;
 }
 
-.btn:hover{
-transform:translateY(-3px);
-}
-
-/* =====================
-SECTIONS
-===================== */
+/* ================= SECTIONS ================= */
 section{
 padding:120px 8%;
 }
 
 .title{
-font-size:3.5rem;
+font-size:3rem;
 text-align:center;
 font-family:"Cormorant Garamond";
-margin-bottom:20px;
+margin-bottom:40px;
 }
 
-.subtitle{
+.text{
+max-width:800px;
+margin:auto;
 text-align:center;
-opacity:.7;
-max-width:700px;
-margin:0 auto 60px;
+opacity:.8;
+line-height:1.7;
 }
 
-/* =====================
-CARDS
-===================== */
+/* ================= CARDS ================= */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
 }
 
 .card{
-background:#161616;
-padding:30px;
-border-radius:16px;
-transition:.4s;
+background:#181818;
+padding:25px;
+border-radius:14px;
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-background:#1c1c1c;
+transform:translateY(-6px);
 }
 
-.card h3{
-color:#c49b63;
-margin-bottom:10px;
-font-family:"Cormorant Garamond";
-font-size:1.8rem;
-}
-
-/* =====================
-GALLERY
-===================== */
+/* ================= GALLERY ================= */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -182,20 +142,13 @@ gap:15px;
 
 .gallery img{
 width:100%;
-height:260px;
+height:250px;
 object-fit:cover;
-border-radius:12px;
-transition:.3s;
+border-radius:10px;
 }
 
-.gallery img:hover{
-transform:scale(1.03);
-}
-
-/* =====================
-RESERVATION
-===================== */
-.form{
+/* ================= FORM ================= */
+form{
 max-width:600px;
 margin:auto;
 display:flex;
@@ -205,76 +158,37 @@ gap:15px;
 
 input, textarea{
 padding:15px;
-border-radius:10px;
 border:none;
-outline:none;
-font-size:14px;
-}
-
-textarea{
-min-height:120px;
+border-radius:8px;
 }
 
 button{
 padding:15px;
 background:#c49b63;
 border:none;
-border-radius:10px;
+border-radius:8px;
 font-weight:600;
 cursor:pointer;
 }
 
-/* =====================
-FOOTER
-===================== */
+/* ================= FOOTER ================= */
 footer{
-padding:40px;
 text-align:center;
+padding:40px;
+background:black;
 opacity:.6;
-background:#000;
-margin-top:60px;
 }
 
-/* =====================
-ANIMATION
-===================== */
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:all .8s ease;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* =====================
-RESPONSIVE
-===================== */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
 
-.hero h1{
-font-size:3rem;
-}
+nav a{display:none}
 
-nav ul{
-display:none;
-position:absolute;
-top:70px;
-right:8%;
-flex-direction:column;
-background:#111;
-padding:20px;
-border-radius:10px;
-}
+.menu{display:block}
 
-nav ul.active{
-display:flex;
-}
-
-.menu-btn{
+nav.active a{
 display:block;
+margin:10px 0;
 }
 
 }
@@ -285,61 +199,67 @@ display:block;
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="nav">
 <div class="logo">ALT WIEN</div>
-<div class="menu-btn">☰</div>
-
-<ul>
-<li><a href="#about">Über uns</a></li>
-<li><a href="#menu">Speisen</a></li>
-<li><a href="#gallery">Galerie</a></li>
-<li><a href="#reserve">Reservierung</a></li>
-</ul>
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div>
+<a href="#home">Home</a>
+<a href="#about">Über uns</a>
+<a href="#menu">Speisekarte</a>
+<a href="#gallery">Galerie</a>
+<a href="#reserve">Reservierung</a>
+<a href="#contact">Kontakt</a>
+</div>
 </nav>
 
 <!-- HERO -->
-<section class="hero fade">
+<section class="hero" id="home">
 <div>
-<h1>Wiener Kaffeehauskultur</h1>
-<p>Tradition seit Generationen – Kaffee, Küche und Atmosphäre im Herzen Wiens.</p>
-<a class="btn" href="#reserve">Tisch reservieren</a>
+<h1>Wiener Kaffeehaus</h1>
+<p>Tradition seit 1922 · Genuss im Herzen Wiens</p>
+<a href="#reserve" class="btn">Tisch reservieren</a>
 </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="fade">
-<h2 class="title">Über unser Haus</h2>
-<p class="subtitle">
-Ein Ort der Begegnung, seit über 100 Jahren geprägt von Wiener Tradition, Kultur und Gastlichkeit.
+<section id="about">
+<h2 class="title">Über uns</h2>
+<p class="text">
+Ein historisches Kaffeehaus mit Wiener Tradition, hausgemachten Speisen und echter Gastfreundschaft seit über 100 Jahren.
 </p>
 </section>
 
 <!-- MENU -->
-<section id="menu" class="fade">
-<h2 class="title">Spezialitäten</h2>
+<section id="menu">
+<h2 class="title">Speisekarte</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>Schnitzel</h3>
-<p>Knusprig, klassisch, Wiener Originalrezept.</p>
+<p>Knusprig paniert mit Kartoffelsalat</p>
 </div>
 
 <div class="card">
 <h3>Gulasch</h3>
-<p>Langsam geschmort mit kräftiger Paprikanote.</p>
+<p>Traditionell langsam geschmort</p>
 </div>
 
 <div class="card">
 <h3>Apfelstrudel</h3>
-<p>Hausgemacht, warm serviert mit Vanillesauce.</p>
+<p>Hausgemacht mit Vanille</p>
+</div>
+
+<div class="card">
+<h3>Kaffeehaus Spezial</h3>
+<p>Melange nach Wiener Art</p>
 </div>
 
 </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="fade">
+<section id="gallery">
 <h2 class="title">Atmosphäre</h2>
 
 <div class="gallery">
@@ -351,11 +271,11 @@ Ein Ort der Begegnung, seit über 100 Jahren geprägt von Wiener Tradition, Kult
 </section>
 
 <!-- RESERVATION -->
-<section id="reserve" class="fade">
+<section id="reserve">
 <h2 class="title">Reservierung</h2>
 
-<form class="form">
-<input type="text" placeholder="Name">
+<form>
+<input placeholder="Name">
 <input type="email" placeholder="E-Mail">
 <input type="date">
 <textarea placeholder="Nachricht"></textarea>
@@ -363,34 +283,24 @@ Ein Ort der Begegnung, seit über 100 Jahren geprägt von Wiener Tradition, Kult
 </form>
 </section>
 
-<!-- FOOTER -->
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="title">Kontakt</h2>
+<p class="text">
+Bäckerstraße 9, 1010 Wien<br><br>
++43 1 512 52 22<br>
+office@altwien.at
+</p>
+</section>
+
 <footer>
-© 2026 Alt Wien – Wiener Kaffeehauskultur
+© 2026 Alt Wien
 </footer>
 
 <script>
-
-/* MOBILE MENU */
-const btn = document.querySelector(".menu-btn");
-const menu = document.querySelector("nav ul");
-
-btn.addEventListener("click", () => {
-menu.classList.toggle("active");
-});
-
-/* SCROLL ANIMATION */
-const elements = document.querySelectorAll(".fade");
-
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add("show");
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("active");
 }
-});
-});
-
-elements.forEach(el => observer.observe(el));
-
 </script>
 
 </body>
